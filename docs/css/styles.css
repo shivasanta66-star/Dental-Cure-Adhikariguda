@@ -255,11 +255,11 @@ textarea.input { min-height: 96px; resize: vertical; }
 .site-footer { padding-top: var(--sec-y); padding-bottom: 40px; }
 .footer-grid {
   border-top: 1px solid var(--color-text); padding-top: 32px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 28px; font-size: 15px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 28px; font-size: 15px;
 }
-.footer-brand { display: flex; gap: 14px; align-items: center; }
-.footer-brand svg { width: 80px; height: 80px; flex: none; }
-.footer-brand span { font-size: 18px; font-weight: 600; line-height: 1.2; }
+.footer-brand { grid-column: 1 / -1; display: flex; gap: 18px; align-items: center; }
+.footer-brand svg { width: 112px; height: 112px; flex: none; }
+.footer-brand span { font-size: 24px; font-weight: 600; line-height: 1.2; }
 .disclaimer { font-size: 13px; color: var(--color-neutral-700); margin-top: 28px; }
 
 /* mobile action bar */
@@ -286,6 +286,9 @@ textarea.input { min-height: 96px; resize: vertical; }
   .header-actions .btn { min-height: 44px; padding: 0 14px; }
   .hero .actions .btn { flex: 1 1 auto; }
   .site-footer { padding-bottom: 96px; }
+  .footer-brand { gap: 14px; }
+  .footer-brand svg { width: 96px; height: 96px; }
+  .footer-brand span { font-size: 20px; white-space: nowrap; }
   .mobile-bar {
     display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
