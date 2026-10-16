@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-59b47f6a-6786-4e02-ac53-41d152683f6f/styles.css">
+<script src="_ds/broadsheet-59b47f6a-6786-4e02-ac53-41d152683f6f/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}a{color:#006786}a:hover{color:#004961}details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:#e4e2e2">
+  <div style="position:sticky;top:0;z-index:50;background:#201e1d;color:#f3f2f2;padding:10px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:14px">
+    <strong style="margin-right:auto">Dental Cure — home v2</strong>
+    <div style="display:flex;gap:6px">
+      <button class="{{ cDesktop }}" onClick="{{ setDesktop }}" style="min-height:36px;color:#f3f2f2;border-color:#bab6b6;background:transparent">Desktop</button>
+      <button class="{{ cMobile }}" onClick="{{ setMobile }}" style="min-height:36px;color:#f3f2f2;border-color:#bab6b6;background:transparent">Mobile</button>
+    </div>
+    <label style="display:flex;gap:8px;align-items:center">Background <select onChange="{{ setBg }}" style="min-height:36px;font:inherit;padding:0 8px;border-radius:2px"><option value="paper">Paper (grey)</option><option value="ivory">Warm ivory</option><option value="cyan">Pale cyan</option><option value="white">White</option></select></label>
+    <label style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" checked="{{ annotate }}" onChange="{{ toggleAnnotate }}" style="width:18px;height:18px"> Draft notes</label>
+  </div>
+
+  <div style="width:{{ siteWidth }};max-width:100%;margin:0 auto;background:{{ bg }};box-shadow:0 12px 40px rgba(0,0,0,.12);color:#201e1d;font-size:18px;line-height:1.6">
+
+    <header style="position:sticky;top:52px;z-index:40;background:{{ bg }};padding:0 {{ pad }}">
+      <div style="display:flex;align-items:center;gap:20px;min-height:72px">
+        <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#201e1d;margin-right:auto;min-height:44px">
+          <svg width="46" height="46" viewBox="0 0 120 120" aria-hidden="true" style="flex:none"><circle cx="60" cy="60" r="56" fill="none" stroke="#006786" stroke-width="5"></circle><circle cx="60" cy="60" r="44" fill="none" stroke="#99e0ff" stroke-width="2.5"></circle><text x="60" y="78" text-anchor="middle" font-size="52" font-weight="600" fill="#201e1d" font-family="Source Serif 4, serif">D</text></svg>
+          <span style="font-weight:600;font-size:20px;line-height:1.1;white-space:nowrap">Dental Cure</span>
+        </a>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Primary" style="display:flex;gap:18px;font-size:16px;white-space:nowrap">
+            <a href="#care" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">What we do</a>
+            <a href="#find" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">Finding us</a>
+            <a href="#write" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">WhatsApp us</a>
+            
+          </nav>
+        </sc-if>
+        <a href="tel:+919938988986" class="btn btn-secondary" style="min-height:48px;font-size:16px;padding:0 18px;white-space:nowrap;border-color:#7d7979"><i class="ph-duotone ph-phone-call" style="font-size:20px;color:#006786"></i>Call</a>
+        <a href="#write" class="btn btn-primary" style="background:#006786;min-height:48px;font-size:16px;padding:0 18px;white-space:nowrap" style-hover="background:#004961"><i class="ph-duotone ph-calendar-check" style="font-size:20px"></i>Book</a>
+      </div>
+      <div style="border-top:3px solid #201e1d;padding-top:3px"><div style="border-top:1px solid #201e1d"></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;padding:8px 0 10px;color:#444141;letter-spacing:.02em">
+        <span style="display:flex;align-items:center;gap:6px;font-weight:600;color:{{ statusColor }}"><span style="width:8px;height:8px;border-radius:50%;background:{{ statusColor }}"></span>{{ statusText }}</span>
+        <span>Main Road, Adhikariguda, via Umerkote</span>
+        <span>Every day, 8 a.m. – 8 p.m.</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section style="padding:{{ heroY }} {{ pad }} {{ secY }}">
+        <div style="display:grid;grid-template-columns:{{ heroCols }};gap:{{ gap }};align-items:end">
+          <div>
+            <h1 style="font-size:{{ h1 }};line-height:1.02;letter-spacing:-.025em;margin:0 0 24px;text-wrap:balance">Tooth hurting? Come and see Dr. Mahaldar.</h1>
+            <p style="font-size:21px;line-height:1.5;max-width:26em;margin:0 0 32px;color:#2d2b2b;text-wrap:pretty">Dental Cure is on Main Road in Adhikariguda. Every kind of dental problem is treated here, every day from 8 to 8.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+              <a href="#write" class="btn btn-primary" style="background:#006786;min-height:54px;font-size:19px;padding:0 24px" style-hover="background:#004961"><i class="ph-duotone ph-calendar-check" style="font-size:24px"></i>Book a visit</a>
+              <a href="tel:+919938988986" class="btn btn-secondary" style="min-height:54px;font-size:19px;padding:0 24px;border-color:#7d7979"><i class="ph-duotone ph-phone-call" style="font-size:24px;color:#006786"></i>99389 88986</a>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" class="btn btn-ghost" style="min-height:54px;font-size:18px;color:#006786;padding:0 12px">How to get here →</a>
+            </div>
+          </div>
+          <figure style="margin:0">
+            <div role="img" aria-label="Illustration of the Dental Cure shop front on Main Road, Adhikariguda" style="position:relative;aspect-ratio:{{ photoRatio }};width:100%;overflow:hidden;border-radius:2px;background:linear-gradient(#bfe8fb,#e9f8ff 60%);container-type:inline-size">
+<div style="position:absolute;left:10%;top:7%;width:14%;aspect-ratio:1;border-radius:50%;background:#fff6d6;box-shadow:0 0 40px 10px rgba(255,240,190,.7)"></div>
+<div style="position:absolute;right:6%;top:10%;width:22%;height:5%;border-radius:20px;background:#fff;opacity:.8"></div>
+<div style="position:absolute;left:0;width:20%;top:30%;bottom:20%;background:#cfc7b5"></div>
+<div style="position:absolute;right:0;width:14%;top:34%;bottom:20%;background:#cfc7b5"></div>
+<div style="position:absolute;left:8%;right:8%;top:24%;bottom:20%;background:#efe6d2;box-shadow:inset 0 -2cqw 0 #e0d4b8"></div>
+<div style="position:absolute;left:5%;right:5%;top:21%;height:4%;background:#6b6767"></div>
+<div style="position:absolute;left:11%;right:11%;top:27%;height:25%;background:#1f4e9c;border:.8cqw solid #f3f2f2;box-shadow:0 0 0 .5cqw #444141;display:grid;grid-template-columns:20% 1fr;color:#fff;overflow:hidden">
+  <div style="background:#f3f2f2;display:grid;place-items:center"><svg viewBox="0 0 40 40" style="width:70%"><circle cx="20" cy="20" r="18" fill="#1f4e9c"></circle><path d="M12 12c3-2 5 0 8 0s5-2 8 0c2 4-1 8-2 14-1 3-2 2-3-2-1-3-2-3-3-3s-2 0-3 3c-1 4-2 5-3 2-1-6-4-10-2-14z" fill="#fff"></path></svg></div>
+  <div style="display:flex;flex-direction:column;justify-content:center;padding:0 3cqw;line-height:1.15;gap:.4cqw">
+    <span style="font-size:2.1cqw;color:#e3ebff">Dr. GANESH CH. MAHALDAR · Dentist</span>
+    <span style="font-size:7.4cqw;font-weight:700;letter-spacing:.04em">DENTAL CURE</span>
+    <span lang="hi" style="font-size:2.3cqw;background:#f3f2f2;color:#1f4e9c;padding:.3cqw 1cqw;font-weight:600">यहाँ दाँतों का हर प्रकार का इलाज किया जाता है।</span>
+    <span style="font-size:2.6cqw;font-weight:600">9938988986</span>
+  </div>
+</div>
+<div style="position:absolute;left:14%;right:14%;top:54%;height:6%;background:repeating-linear-gradient(90deg,#1f4e9c 0 10%,#f3f2f2 10% 20%);clip-path:polygon(0 0,100% 0,96% 100%,4% 100%)"></div>
+<div style="position:absolute;left:15%;width:30%;top:62%;bottom:20%;background:linear-gradient(135deg,#d7f0fb,#9fd9ee);border:1cqw solid #605d5d"><div style="position:absolute;left:50%;top:0;bottom:0;width:.8cqw;background:#605d5d"></div><div style="position:absolute;left:16%;bottom:0;width:22%;height:30%;background:#7fb9cf;opacity:.6"></div></div>
+<div style="position:absolute;right:15%;width:22%;top:62%;bottom:20%;background:#a46f3f;border:1cqw solid #605d5d"><div style="position:absolute;left:12%;right:12%;top:12%;height:34%;background:#cfeaf5;border:.6cqw solid #6b4426"></div><div style="position:absolute;left:14%;top:56%;font-size:2.2cqw;line-height:1.1;background:#f3f2f2;color:#201e1d;padding:.4cqw 1cqw">OPEN<br>8–8</div><div style="position:absolute;right:10%;top:56%;width:2%;height:3%;border-radius:50%;background:#e8c46a"></div></div>
+<div style="position:absolute;left:0;right:0;bottom:12%;height:8%;background:#a29e9e"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:12%;background:#605d5d"></div>
+<div style="position:absolute;left:0;right:0;bottom:5.5%;height:1%;background:repeating-linear-gradient(90deg,#f3f2f2 0 6%,transparent 6% 12%)"></div>
+<div style="position:absolute;left:3%;bottom:20%;width:9%;height:20%"><div style="position:absolute;left:44%;bottom:0;width:12%;height:55%;background:#7d7979"></div><div style="position:absolute;left:0;right:0;top:0;height:62%;border-radius:50%;background:#5a8f6a"></div></div>
+<span style="position:absolute;right:8px;top:8px;font-size:11px;letter-spacing:.08em;background:rgba(243,242,242,.9);color:#444141;padding:2px 6px;border-radius:2px">ILLUSTRATION</span>
+</div>
+            <figcaption style="font-size:14px;color:#605d5d;margin-top:10px;font-style:italic">The shop on Main Road, Adhikariguda. Photograph to come.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="care" aria-labelledby="h-care" style="padding:{{ secY }} {{ pad }};scroll-margin-top:150px">
+        <div style="display:grid;grid-template-columns:{{ sideCols }};gap:{{ sideGap }}">
+          <p style="margin:0;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#006786;font-weight:600">What we do</p>
+          <div>
+            <h2 id="h-care" style="font-size:{{ h2 }};line-height:1.1;margin:0 0 12px;max-width:18em;text-wrap:balance">What we treat.</h2>
+            <p style="margin:0 0 36px;max-width:30em;color:#2d2b2b">Not sure what you need? Come in, show us, and we’ll tell you.</p>
+            <sc-if value="{{ annotate }}" hint-placeholder-val="{{ false }}"><p class="tag tag-accent-2" style="margin:0 0 24px">Draft: sample service copy, replace with the clinic’s own wording</p></sc-if>
+            <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ listCols }};gap:28px 48px">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="8">
+                <li style="display:grid;grid-template-columns:36px 1fr;gap:4px 12px">
+                  <span style="font-size:15px;color:#006786;padding-top:5px;font-variant-numeric:tabular-nums">{{ s.n }}</span>
+                  <div><h3 style="font-size:21px;margin:0 0 4px;line-height:1.25">{{ s.name }}</h3><p style="margin:0;font-size:16px;color:#444141;text-wrap:pretty">{{ s.desc }}</p></div>
+                </li>
+              </sc-for>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="A note from the dentist" style="padding:{{ secY }} {{ pad }}">
+        <div style="display:grid;grid-template-columns:{{ sideCols }};gap:{{ sideGap }}">
+          <div style="width:{{ portrait }};aspect-ratio:4/5"><image-slot id="dentist-portrait" shape="rect" radius="2" placeholder="Photo of Dr. Mahaldar"></image-slot></div>
+          <blockquote style="margin:0;max-width:30em">
+            <p style="font-size:{{ quote }};line-height:1.3;font-style:italic;margin:0 0 20px;text-wrap:pretty">“Don’t wait for the pain to get bad. A small problem is easier, quicker and cheaper to fix than a big one.”</p>
+            <footer style="font-size:16px"><strong>Dr. Ganesh Ch. Mahaldar</strong>, Dentist<br><span style="color:#605d5d">Reg. no. PMP-2549 (Ctc.)</span><br><span lang="hi" style="color:#605d5d">यहाँ दाँतों का हर प्रकार का इलाज किया जाता है।</span></footer>
+          <sc-if value="{{ annotate }}" hint-placeholder-val="{{ false }}"><p class="tag tag-accent-2" style="margin:20px 0 0">Draft: sample words, to be replaced with the doctor’s own</p></sc-if></blockquote>
+        </div>
+      </section>
+
+      <section id="find" aria-labelledby="h-find" style="padding:{{ secY }} {{ pad }};scroll-margin-top:150px">
+        <div style="display:grid;grid-template-columns:{{ sideCols }};gap:{{ sideGap }}">
+          <p style="margin:0;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#006786;font-weight:600">Finding us</p>
+          <div>
+            <h2 id="h-find" style="font-size:{{ h2 }};line-height:1.1;margin:0 0 28px;max-width:18em">Main Road, Adhikariguda.</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px">
+              <div>
+                <p style="margin:0 0 16px">Dental Cure<br>Main Road, Adhikariguda, via Umerkote<br>Dist. Nabarangpur, Odisha 764073</p>
+                <p style="margin:0 0 16px;color:#2d2b2b">Look for the blue and white signboard on Main Road. On your phone, search <strong>M579+X39</strong> in Google Maps and it will bring you to the door.</p>
+                <p style="margin:0 0 24px"><strong>Every day, 8 a.m. – 8 p.m.</strong><br><span style="font-size:16px;color:#605d5d">Holidays can change things, so it’s worth a quick call first.</span></p>
+                <div style="display:flex;flex-wrap:wrap;gap:12px">
+                  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" class="btn btn-primary" style="background:#006786;min-height:48px;font-size:16px;padding:0 20px" style-hover="background:#004961"><i class="ph-duotone ph-navigation-arrow" style="font-size:20px"></i>Directions</a>
+                  <a href="https://maps.app.goo.gl/oCztaM27uQnVfuzu7" class="btn btn-secondary" style="min-height:48px;font-size:16px;padding:0 20px;border-color:#7d7979">Open in Maps</a>
+                </div>
+              </div>
+              <div>
+                <h3 style="font-size:20px;margin:0 0 14px">Before you come</h3>
+                <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px">
+                  <li style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="color:#006786">•</span><span>Call ahead if you can. It usually saves you a wait.</span></li>
+                  <li style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="color:#006786">•</span><span>Bring any old X-rays, reports or medicine you take.</span></li>
+                  <li style="display:grid;grid-template-columns:20px 1fr;gap:10px"><span style="color:#006786">•</span><span>Children are welcome. Please come along with them.</span></li>
+                </ul>
+                <sc-if value="{{ annotate }}" hint-placeholder-val="{{ false }}"><p class="tag tag-accent-2" style="margin:20px 0 0">Draft: visit tips are sample text</p></sc-if>
+              </div>
+            </div>
+            <figure style="margin:40px 0 0">
+              <div style="position:relative;width:100%;aspect-ratio:16/9;min-height:280px;background:#e4e2e2;border-radius:2px;overflow:hidden">
+                <iframe title="Dental Cure on Google Maps" src="https://maps.google.com/maps?q=19.6649041,82.167813&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+              </div>
+              <figcaption style="font-size:14px;color:#605d5d;margin-top:10px;font-style:italic">Dental Cure on Google Maps.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="write" aria-labelledby="h-write" style="padding:{{ secY }} {{ pad }};scroll-margin-top:150px">
+        <div style="display:grid;grid-template-columns:{{ sideCols }};gap:{{ sideGap }}">
+          <p style="margin:0;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#006786;font-weight:600">WhatsApp us</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start">
+            <div>
+              <h2 id="h-write" style="font-size:{{ h2 }};line-height:1.1;margin:0 0 16px">Rather write than call?</h2>
+              <p style="margin:0 0 12px;color:#2d2b2b;max-width:24em">Fill this in and WhatsApp opens with your message ready. Just press send, and the clinic will get back to you.</p>
+              <p style="margin:0;font-size:16px;color:#605d5d">If it’s urgent, please phone: <a href="tel:+919938988986">99389 88986</a>.</p>
+            </div>
+            <form onSubmit="{{ submitForm }}" novalidate style="display:flex;flex-direction:column;gap:16px">
+              <div class="field"><label for="f-name" style="font-size:15px">Your name</label><input id="f-name" class="input" type="text" autocomplete="name" style="min-height:48px;font-size:17px"></div>
+              <div class="field"><label for="f-phone" style="font-size:15px">Phone number</label><input id="f-phone" class="input" type="tel" inputmode="tel" autocomplete="tel" aria-invalid="{{ formError }}" style="min-height:48px;font-size:17px"></div>
+              <div class="field"><label for="f-service" style="font-size:15px">What’s it about?</label><select id="f-service" class="input" style="min-height:48px;font-size:17px"><option value="">Choose one</option><sc-for list="{{ serviceNames }}" as="n" hint-placeholder-count="8"><option value="{{ n }}">{{ n }}</option></sc-for><option value="Not sure">Not sure</option></select></div>
+              <div class="field"><label for="f-msg" style="font-size:15px">Anything else? (optional)</label><textarea id="f-msg" class="input" placeholder="e.g. Best time to call me is after 5" style="font-size:17px"></textarea></div>
+              <button type="submit" class="btn btn-primary" style="background:#006786;min-height:52px;font-size:18px" style-hover="background:#004961"><i class="ph-duotone ph-whatsapp-logo" style="font-size:24px"></i>Open in WhatsApp</button>
+              <p role="alert" style="margin:0;font-size:15px;color:#790e3d;display:{{ errDisplay }}">We need your name and phone number to reply.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="questions" aria-labelledby="h-q" style="padding:{{ secY }} {{ pad }};scroll-margin-top:150px">
+        <div style="display:grid;grid-template-columns:{{ sideCols }};gap:{{ sideGap }}">
+          <p style="margin:0;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#006786;font-weight:600">Questions</p>
+          <div style="max-width:40em">
+            <h2 id="h-q" style="font-size:{{ h2 }};line-height:1.1;margin:0 0 16px">Questions we get a lot.</h2>
+            <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+              <details style="padding:4px 0"><summary style="min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:19px">{{ q.q }}<i class="ph-duotone ph-plus" style="color:#006786;font-size:18px;flex:none"></i></summary><p style="margin:0 0 14px;color:#2d2b2b">{{ q.a }}</p></details>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer style="padding:{{ secY }} {{ pad }} {{ footBottom }}">
+      <div style="border-top:1px solid #201e1d;padding-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:28px;font-size:15px">
+        <div style="display:flex;gap:14px;align-items:center">
+          <svg width="80" height="80" viewBox="0 0 120 120" role="img" aria-label="Dental Cure seal" style="flex:none"><defs><path id="ring-v2" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"></path></defs><circle cx="60" cy="60" r="57" fill="none" stroke="#006786" stroke-width="3"></circle><circle cx="60" cy="60" r="31" fill="none" stroke="#38a6cf" stroke-width="1.5"></circle><text font-size="11" letter-spacing="2.4" fill="#006786" font-weight="600" font-family="Source Serif 4, serif"><textPath href="#ring-v2" startOffset="2%">DENTAL CURE · ADHIKARIGUDA ·</textPath></text><text x="60" y="71" text-anchor="middle" font-size="32" font-weight="600" fill="#201e1d" font-family="Source Serif 4, serif">D</text></svg>
+          <span style="font-size:18px;font-weight:600;line-height:1.2">Dental Cure</span>
+        </div>
+        <p style="margin:0">Main Road, Adhikariguda, via Umerkote<br>Dist. Nabarangpur, Odisha 764073<br><a href="tel:+919938988986">+91 99389 88986</a></p>
+        <p style="margin:0">Every day, 8 a.m. – 8 p.m.<br><a href="https://maps.app.goo.gl/oCztaM27uQnVfuzu7">Google Maps</a></p>
+        <p style="margin:0">Dr. Ganesh Ch. Mahaldar<br>Reg. no. PMP-2549 (Ctc.)</p>
+      </div>
+      <p style="font-size:13px;color:#605d5d;margin:28px 0 0">General information only, not medical advice. If it is an emergency out of hours, go to your nearest hospital.</p>
+    </footer>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="position:sticky;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px;background:{{ bg }};border-top:1px solid #201e1d">
+        <a href="tel:+919938988986" class="btn btn-primary" style="background:#006786;min-height:52px;font-size:17px"><i class="ph-duotone ph-phone-call" style="font-size:22px"></i>Call</a>
+        <a href="https://wa.me/919938988986" class="btn btn-secondary" style="min-height:52px;font-size:17px;border-color:#7d7979"><i class="ph-duotone ph-whatsapp-logo" style="font-size:22px;color:#006786"></i>WhatsApp</a>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { view: 'desktop', annotate: false, formError: false, bgKey: 'paper' };
+  renderVals() {
+    const m = this.state.view === 'mobile';
+    const B = { paper: ['#f3f2f2', '#eae9e9'], ivory: ['#faf6ec', '#f1e9d8'], cyan: ['#e9f8ff', '#cbeeff'], white: ['#ffffff', '#f1efef'] }[this.state.bgKey];
+    const now = new Date(), ist = (now.getUTCHours() * 60 + now.getUTCMinutes() + 330) % 1440;
+    const open = ist >= 480 && ist < 1200;
+    const services = [
+      ['Check-ups', 'A proper look at your teeth and gums, and honest advice on what, if anything, needs doing.'],
+      ['Cleaning', 'Scaling and polishing for the tartar a toothbrush can’t shift.'],
+      ['Fillings', 'Tooth-coloured fillings for cavities and small chips.'],
+      ['Tooth pain', 'Come in when it hurts. We find out why before we talk about treatment.'],
+      ['Root canal', 'To save an infected tooth instead of losing it.'],
+      ['Extractions', 'Including wisdom teeth, when there’s no better option.'],
+      ['Children’s teeth', 'Unhurried first visits, so the dentist never becomes something to dread.'],
+      ['Dentures', 'Full and partial, adjusted until they sit right.']
+    ];
+    return {
+      cDesktop: 'btn ' + (!m ? 'btn-primary' : 'btn-secondary'), cMobile: 'btn ' + (m ? 'btn-primary' : 'btn-secondary'),
+      setDesktop: () => this.setState({ view: 'desktop' }), setMobile: () => this.setState({ view: 'mobile' }),
+      isMobile: m, isDesktop: !m,
+      bg: B[0], surface: B[1], setBg: (e) => this.setState({ bgKey: e.target.value }),
+      annotate: this.state.annotate, toggleAnnotate: (e) => this.setState({ annotate: e.target.checked }),
+      statusText: open ? 'Open now, until 8 p.m.' : 'Closed now · opens 8 a.m.',
+      statusColor: open ? '#006786' : '#aa0b56',
+      siteWidth: m ? '390px' : '1280px',
+      pad: m ? '20px' : 'clamp(24px,5vw,72px)',
+      secY: m ? '48px' : '80px', heroY: m ? '36px' : '64px', footBottom: m ? '24px' : '40px',
+      gap: m ? '32px' : '64px', sideGap: m ? '12px' : '48px',
+      heroCols: m ? '1fr' : 'minmax(0,1.35fr) minmax(0,1fr)',
+      sideCols: m ? '1fr' : '200px minmax(0,1fr)',
+      listCols: m ? '1fr' : 'repeat(2,minmax(0,1fr))',
+      photoRatio: m ? '4/3' : '1/1', portrait: m ? '140px' : '200px',
+      h1: m ? '44px' : 'clamp(48px,5.6vw,76px)', h2: m ? '30px' : '42px', quote: m ? '24px' : '32px',
+      services: services.map(([name, desc], i) => ({ n: String(i + 1).padStart(2, '0'), name, desc })),
+      serviceNames: services.map(s => s[0]),
+      faqs: [
+        { q: 'Do I need an appointment?', a: 'It helps. Give us a call and we’ll tell you when’s quietest. If you just turn up, we’ll do our best to fit you in.' },
+        { q: 'Are you really open every day?', a: 'Yes, 8 a.m. to 8 p.m., including Sundays. Festival days can be different, so call first around holidays.' },
+        { q: 'How much will it cost?', a: 'It depends on what you need. We’ll tell you the cost before starting anything, so there are no surprises.' },
+        { q: 'Can I bring my child?', a: 'Of course. Children are welcome; please come with them for the visit.' },
+        { q: 'What if it’s an emergency at night?', a: 'Outside our hours, please go to your nearest hospital. During the day, call us straight away.' }
+      ],
+      formError: this.state.formError ? 'true' : 'false',
+      errDisplay: this.state.formError ? 'block' : 'none',
+      submitForm: (e) => {
+        e.preventDefault();
+        const g = (id) => (document.getElementById(id)?.value || '').trim();
+        const name = g('f-name'), phone = g('f-phone');
+        if (!name || !phone) { this.setState({ formError: true }); return; }
+        this.setState({ formError: false });
+        const lines = ['Hello, this is ' + name + '.', 'Phone: ' + phone];
+        if (g('f-service')) lines.push('About: ' + g('f-service'));
+        if (g('f-msg')) lines.push(g('f-msg'));
+        window.open('https://wa.me/919938988986?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

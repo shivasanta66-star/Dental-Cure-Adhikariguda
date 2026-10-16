@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-59b47f6a-6786-4e02-ac53-41d152683f6f/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}a{color:#006786}a:hover{color:#004961}details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}</style>
+</helmet>
+
+<div style="min-height:100vh;background:#e4e2e2;padding-bottom:0">
+  <!-- design chrome -->
+  <div style="position:sticky;top:0;z-index:50;background:#201e1d;color:#f3f2f2;padding:10px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:14px">
+    <strong style="margin-right:auto">Ganesh Dental — home page design</strong>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="{{ cDesktop }}" onClick="{{ setDesktop }}" style="min-height:36px;color:#f3f2f2;border-color:#bab6b6;background:transparent">Desktop</button>
+      <button class="{{ cMobile }}" onClick="{{ setMobile }}" style="min-height:36px;color:#f3f2f2;border-color:#bab6b6;background:transparent">Mobile</button>
+      <button class="{{ cHandoff }}" onClick="{{ setHandoff }}" style="min-height:36px;color:#f3f2f2;border-color:#bab6b6;background:transparent">Handoff notes</button>
+    </div>
+    <sc-if value="{{ showSite }}" hint-placeholder-val="{{ true }}">
+      <label style="display:flex;gap:8px;align-items:center">Background <select onChange="{{ setBg }}" style="min-height:36px;font:inherit;padding:0 8px;border-radius:2px">
+        <option value="paper">Paper (grey)</option><option value="ivory">Warm ivory</option><option value="cyan">Pale cyan</option><option value="white">White</option>
+      </select></label>
+      <label style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" checked="{{ annotate }}" onChange="{{ toggleAnnotate }}" style="width:18px;height:18px"> Show draft annotations <span style="opacity:.7">(off = public version)</span></label>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ showSite }}" hint-placeholder-val="{{ true }}">
+  <div style="width:{{ siteWidth }};max-width:100%;margin:0 auto;background:{{ bg }};box-shadow:0 0 0 1px rgba(0,0,0,.06),0 12px 40px rgba(0,0,0,.12);position:relative;color:#201e1d;font-size:17px;line-height:1.6">
+
+    <!-- header -->
+    <header style="position:sticky;top:{{ headerTop }};z-index:40;background:{{ bg }};display:flex;align-items:center;gap:20px;padding:12px {{ pad }};min-height:68px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#201e1d;margin-right:auto;min-height:44px">
+        <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true" style="flex:none"><circle cx="60" cy="60" r="56" fill="none" stroke="#006786" stroke-width="5"/><circle cx="60" cy="60" r="44" fill="none" stroke="#99e0ff" stroke-width="2.500"/><text x="60" y="78" text-anchor="middle" font-size="52" font-weight="600" fill="#201e1d" font-family="Source Serif 4, serif">G</text></svg>
+        <span style="font-weight:600;font-size:19px;line-height:1.1;letter-spacing:-.01em">Ganesh Dental Clinic<span style="display:block;font-weight:400;font-size:13px;color:#605d5d">Adhikariguda main road</span></span>
+      </a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <nav aria-label="Primary" style="display:flex;gap:22px;font-size:16px">
+          <a href="#services" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">Services</a>
+          <a href="#about" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">About</a>
+          <a href="#visit" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">Visit</a>
+          <a href="#contact" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">Contact</a>
+          <a href="#faq" style="color:#201e1d;text-decoration:none;min-height:44px;display:flex;align-items:center" style-hover="color:#006786">FAQ</a>
+        </nav>
+      </sc-if>
+      <a href="tel:+919938988986" aria-label="Call clinic on +91 99389 88986" class="btn btn-primary" style="background:#006786;min-height:48px;font-size:16px;padding:0 20px;white-space:nowrap" style-hover="background:#004961"><i class="ph-duotone ph-phone-call" style="font-size:22px"></i>Call clinic</a>
+    </header>
+
+    <main id="top">
+    <!-- hero -->
+    <section style="padding:{{ secY }} {{ pad }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:{{ heroGap }};align-items:center">
+        <div>
+          <p style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#006786;margin:0 0 16px">Adhikariguda · Odisha</p>
+          <h1 style="font-size:{{ h1 }};line-height:1.06;letter-spacing:-.02em;margin:0 0 20px">Your neighbourhood dental clinic, on Adhikariguda main road.</h1>
+          <p style="font-size:19px;max-width:30em;margin:0 0 28px;color:#2d2b2b">Find us in Adhikariguda, Pujaribharandi. Open every day, 8:00 a.m. to 8:00 p.m. Call to speak with the clinic, or get directions.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <a href="tel:+919938988986" class="btn btn-primary" style="background:#006786;min-height:52px;font-size:18px;padding:0 20px;flex:1 1 auto" style-hover="background:#004961"><i class="ph-duotone ph-phone-call" style="font-size:24px"></i>Call +91 99389 88986</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" class="btn btn-secondary" style="min-height:52px;font-size:18px;padding:0 20px;border-color:#7d7979;flex:1 1 auto"><i class="ph-duotone ph-navigation-arrow" style="font-size:24px;color:#006786"></i>Get directions</a>
+          </div>
+          <p style="font-size:14px;color:#605d5d;margin:20px 0 0">Information on this site is general and is not medical advice. If you need urgent care, call the clinic or your nearest hospital.</p>
+        </div>
+        <figure style="margin:0">
+          <div role="img" aria-label="Clinic reception area" style="position:relative;aspect-ratio:4/5;max-height:560px;width:100%;background:{{ surface }};border-radius:4px;overflow:hidden;display:grid;place-items:center">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true"><g fill="none" stroke="#99e0ff" stroke-width="1.5"><circle cx="330" cy="420" r="60"/><circle cx="330" cy="420" r="110"/><circle cx="330" cy="420" r="160"/><circle cx="330" cy="420" r="210"/><circle cx="330" cy="420" r="260"/><circle cx="330" cy="420" r="310"/></g><path d="M40 90c40-40 100-40 120 0s-10 70-30 120" fill="none" stroke="#38a6cf" stroke-width="2" stroke-linecap="round"/></svg>
+            <i class="ph-duotone ph-image" style="position:relative;font-size:64px;color:#006786"></i>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- practical info strip -->
+    <section aria-label="Practical information" style="padding:0 {{ pad }} {{ secY }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px 40px">
+        <div style="display:flex;gap:14px"><i class="ph-duotone ph-map-pin" style="font-size:32px;color:#006786;flex:none"></i><div><h2 style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#605d5d;margin:0 0 4px;font-weight:600">Location</h2><p style="margin:0 0 6px">Adhikariguda main road, Pujaribharandi, Odisha 764073<br><span style="font-size:14px;color:#605d5d">Plus code M579+X39</span></p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" style="font-weight:600;display:inline-block;min-height:44px;padding-top:8px">Get directions →</a></div></div>
+        <div style="display:flex;gap:14px"><i class="ph-duotone ph-clock" style="font-size:32px;color:#006786;flex:none"></i><div><h2 style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#605d5d;margin:0 0 4px;font-weight:600">Listed hours</h2><p style="margin:0 0 6px">Daily, 8:00 a.m. – 8:00 p.m.<br><span style="font-size:14px;color:#605d5d">Hours may vary on holidays.</span></p><a href="tel:+919938988986" style="font-weight:600;display:inline-block;min-height:44px;padding-top:8px">Call to confirm →</a></div></div>
+        <div style="display:flex;gap:14px"><i class="ph-duotone ph-phone" style="font-size:32px;color:#006786;flex:none"></i><div><h2 style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#605d5d;margin:0 0 4px;font-weight:600">Phone</h2><p style="margin:0 0 6px">+91 99389 88986</p><a href="tel:+919938988986" style="font-weight:600;display:inline-block;min-height:44px;padding-top:8px">Call clinic →</a></div></div>
+      </div>
+    </section>
+
+    <!-- services (draft only) -->
+    <section id="services" aria-labelledby="h-services" style="padding:{{ secY }} {{ pad }};scroll-margin-top:80px">
+      <sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}"><div style="display:inline-flex;margin-bottom:16px" class="tag tag-accent-2">DESIGN ANNOTATION — sample service copy; replace with clinic-approved text</div></sc-if>
+      <h2 id="h-services" style="font-size:{{ h2 }};max-width:16em">Services</h2>
+      <p style="max-width:34em;margin:0 0 28px;color:#2d2b2b">Everyday dental care for adults and children, from check-ups to restorative treatment.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="8">
+          <article class="card" style="padding:20px;gap:10px;background:{{ surface }}">
+            <i class="{{ s.icon }}" style="font-size:34px;color:#006786"></i>
+            <h3 style="font-size:20px;margin:0">{{ s.name }}</h3>
+            <p style="margin:0;font-size:15px;color:#444141">{{ s.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section id="about" aria-labelledby="h-about" style="padding:{{ secY }} {{ pad }};scroll-margin-top:80px">
+      <h2 id="h-about" style="font-size:{{ h2 }}">About the clinic</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;margin-top:20px">
+        <div><p style="margin:0 0 12px;max-width:32em">Sample text about the clinic. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p style="margin:0;max-width:32em">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p></div>
+        <div style="display:flex;gap:18px;align-items:flex-start">
+          <div role="img" aria-label="Portrait of the dentist" style="width:84px;height:84px;border-radius:50%;background:#cbeeff;flex:none;display:grid;place-items:center"><i class="ph-duotone ph-user" style="font-size:36px;color:#006786"></i></div>
+          <div><p style="margin:0 0 4px;font-weight:600;font-size:19px">Dr. Sample Name</p><p style="margin:0;font-size:15px;color:#444141">Qualifications · Registration no. 00000<br>Sample biography line. Lorem ipsum dolor sit amet.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- visit -->
+    <section id="visit" aria-labelledby="h-visit" style="padding:{{ secY }} {{ pad }};scroll-margin-top:80px">
+      <h2 id="h-visit" style="font-size:{{ h2 }}">Visit the clinic</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:{{ heroGap }};margin-top:20px;align-items:start">
+        <div>
+          <h3 style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#605d5d;font-weight:600">Address</h3>
+          <p>Ganesh Dental Clinic, Adhikariguda main road<br>M579+X39, Adhikariguda, Pujaribharandi<br>Odisha 764073, India</p>
+          <h3 style="font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#605d5d;font-weight:600;margin-top:24px">Listed hours</h3>
+          <p style="margin-bottom:4px">Every day, 8:00 a.m. – 8:00 p.m.</p>
+          <p style="font-size:15px;color:#605d5d">Hours may vary on holidays. Please call before you travel.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" class="btn btn-primary" style="background:#006786;min-height:48px;font-size:16px;padding:0 22px" style-hover="background:#004961"><i class="ph-duotone ph-navigation-arrow" style="font-size:22px"></i>Get directions</a>
+            <a href="https://maps.app.goo.gl/oCztaM27uQnVfuzu7" class="btn btn-secondary" style="min-height:48px;font-size:16px;padding:0 22px;border-color:#7d7979">Open in Google Maps</a>
+          </div>
+        </div>
+        <div>
+          <div role="img" aria-label="Map placeholder for Ganesh Dental Clinic, Adhikariguda" style="position:relative;aspect-ratio:4/3;background:{{ surface }};border-radius:4px;overflow:hidden;display:grid;place-items:center">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true"><g fill="none" stroke="#bab6b6" stroke-width="2"><path d="M-10 210 C100 190 200 170 410 120"/><path d="M120 -10 C140 100 170 200 200 310"/><path d="M-10 90 C120 100 260 60 410 40" stroke-width="1"/></g></svg>
+            <div style="position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px"><i class="ph-duotone ph-map-pin" style="font-size:44px;color:#006786"></i><span style="font-size:15px;background:{{ bg }};padding:6px 12px;border-radius:2px">Map embed placeholder · 19.6649041, 82.167813</span></div>
+          </div>
+          <p style="font-size:13px;color:#605d5d;margin:6px 0 0">Embed loads only after the visitor chooses to; the links above always work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" aria-labelledby="h-contact" style="padding:{{ secY }} {{ pad }};scroll-margin-top:80px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:{{ heroGap }};align-items:start">
+        <div>
+          <h2 id="h-contact" style="font-size:{{ h2 }}">Contact the clinic</h2>
+          <p style="max-width:28em">The fastest way to reach the clinic is by phone.</p>
+          <a href="tel:+919938988986" class="btn btn-primary" style="background:#006786;min-height:56px;font-size:20px;padding:0 28px;margin:8px 0 20px" style-hover="background:#004961"><i class="ph-duotone ph-phone-call" style="font-size:26px"></i>+91 99389 88986</a>
+          <p style="font-size:15px;color:#605d5d">Daily, 8:00 a.m. – 8:00 p.m. Hours may vary on holidays.</p>
+          <p style="font-size:15px;color:#444141">Email: hello@example.com</p>
+        </div>
+        <form onSubmit="{{ submitForm }}" novalidate style="display:flex;flex-direction:column;gap:16px" aria-labelledby="h-form">
+          <h3 id="h-form" style="font-size:22px;margin:0">Enquiry form</h3>
+          <sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}"><span class="tag tag-accent-2" style="align-self:flex-start;font-size:12px;padding:6px 10px">DESIGN ANNOTATION — sends via WhatsApp click-to-chat; confirm the number is WhatsApp-enabled</span></sc-if>
+          <div class="field"><label for="f-name" style="font-size:15px;color:#2d2b2b">Your name</label><input id="f-name" class="input" type="text" autocomplete="name" style="min-height:48px;font-size:17px"></div>
+          <div class="field"><label for="f-phone" style="font-size:15px;color:#2d2b2b">Phone number</label><input id="f-phone" class="input" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="f-phone-hint f-err" aria-invalid="{{ formError }}" style="min-height:48px;font-size:17px"><span id="f-phone-hint" style="font-size:13px;color:#605d5d">The clinic would use this to call you back.</span></div>
+          <div class="field"><label for="f-service" style="font-size:15px;color:#2d2b2b">Service you’re enquiring about</label><select id="f-service" class="input" style="min-height:48px;font-size:17px"><option value="">Select a service</option><sc-for list="{{ serviceNames }}" as="n" hint-placeholder-count="8"><option value="{{ n }}">{{ n }}</option></sc-for><option value="Other / not sure">Other / not sure</option></select></div>
+          <div class="field"><label for="f-time" style="font-size:15px;color:#2d2b2b">Preferred time to be called (optional)</label><input id="f-time" class="input" type="text" placeholder="e.g. morning" style="min-height:48px;font-size:17px"></div>
+          <div class="field"><label for="f-msg" style="font-size:15px;color:#2d2b2b">Message (optional)</label><textarea id="f-msg" class="input" style="font-size:17px"></textarea><span style="font-size:13px;color:#605d5d">Please don’t share medical details here. Call the clinic instead.</span></div>
+          <button type="submit" class="btn btn-primary" style="background:#006786;min-height:52px;font-size:18px" style-hover="background:#004961"><i class="ph-duotone ph-whatsapp-logo" style="font-size:24px"></i>Send on WhatsApp</button>
+          <p style="margin:0;font-size:14px;color:#605d5d">Opens WhatsApp with your message ready for the clinic’s number. You press Send there.</p>
+          <p id="f-err" role="alert" style="margin:0;font-size:15px;color:#790e3d;background:#fff1f4;padding:10px 12px;border-radius:2px;display:{{ errDisplay }}">Please enter your name and phone number, or call +91 99389 88986.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- faq -->
+    <section id="faq" aria-labelledby="h-faq" style="padding:{{ secY }} {{ pad }};scroll-margin-top:80px">
+      <h2 id="h-faq" style="font-size:{{ h2 }}">Common questions</h2>
+      <div style="max-width:44em;display:flex;flex-direction:column;gap:4px;margin-top:16px">
+        <details style="padding:6px 0"><summary style="min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:18px">What are your hours?<i class="ph-duotone ph-caret-down" style="color:#006786;font-size:20px"></i></summary><p style="margin:8px 0 12px">The listed hours are daily, 8:00 a.m. – 8:00 p.m. They may vary on holidays, so please call before you travel.</p></details>
+        <details style="padding:6px 0"><summary style="min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:18px">Where is the clinic?<i class="ph-duotone ph-caret-down" style="color:#006786;font-size:20px"></i></summary><p style="margin:8px 0 12px">On Adhikariguda main road, Pujaribharandi, Odisha 764073 (plus code M579+X39). Use “Get directions” for turn-by-turn navigation.</p></details>
+        <details style="padding:6px 0"><summary style="min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:18px">How do I contact the clinic?<i class="ph-duotone ph-caret-down" style="color:#006786;font-size:20px"></i></summary><p style="margin:8px 0 12px">Call <a href="tel:+919938988986">+91 99389 88986</a>.</p></details>
+        <sc-if value="{{ annotate }}" hint-placeholder-val="{{ true }}">
+          <sc-for list="{{ faqPlaceholders }}" as="q" hint-placeholder-count="4">
+            <details style="padding:6px 0"><summary style="min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:18px">{{ q }}<i class="ph-duotone ph-caret-down" style="font-size:20px"></i></summary><p style="margin:8px 0 12px">Sample answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></details>
+          </sc-for>
+        </sc-if>
+      </div>
+    </section>
+    </main>
+
+    <!-- footer -->
+    <footer style="padding:{{ secY }} {{ pad }} 40px;background:{{ surface }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:28px">
+        <div style="display:flex;gap:14px;align-items:center"><svg width="88" height="88" viewBox="0 0 120 120" role="img" aria-label="Ganesh Dental Clinic seal" style="flex:none"><defs><path id="ring-f" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><circle cx="60" cy="60" r="57" fill="none" stroke="#006786" stroke-width="3"/><circle cx="60" cy="60" r="31" fill="none" stroke="#38a6cf" stroke-width="1.500"/><text font-size="11" letter-spacing="2.400" fill="#006786" font-weight="600" font-family="Source Serif 4, serif"><textPath href="#ring-f" startOffset="2%">GANESH DENTAL · ADHIKARIGUDA ·</textPath></text><text x="60" y="71" text-anchor="middle" font-size="32" font-weight="600" fill="#201e1d" font-family="Source Serif 4, serif">G</text></svg><div><p style="font-weight:600;font-size:19px;margin:0 0 6px">Ganesh Dental Clinic</p><p style="font-size:15px;margin:0;color:#444141">Adhikariguda main road</p></div></div>
+        <div style="font-size:15px"><p style="margin:0 0 6px"><a href="tel:+919938988986">+91 99389 88986</a></p><p style="margin:0">M579+X39, Adhikariguda, Pujaribharandi, Odisha 764073</p></div>
+        <div style="font-size:15px"><p style="margin:0 0 6px">Daily, 8:00 a.m. – 8:00 p.m.<br>Hours may vary on holidays.</p><a href="https://maps.app.goo.gl/oCztaM27uQnVfuzu7">View on Google Maps</a></div>
+        <div style="font-size:15px;display:flex;flex-direction:column;gap:6px"><a href="#top">Privacy policy</a><a href="#top">Accessibility</a></div>
+      </div>
+      <p style="font-size:13px;color:#444141;margin:28px 0 0">This website gives general information and is not medical advice.</p>
+    </footer>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="position:sticky;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px;background:{{ bg }};box-shadow:0 -4px 14px rgba(0,0,0,.12)">
+        <a href="tel:+919938988986" class="btn btn-primary" style="background:#006786;min-height:52px;font-size:17px"><i class="ph-duotone ph-phone-call" style="font-size:22px"></i>Call</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.6649041%2C82.167813" class="btn btn-secondary" style="min-height:52px;font-size:17px;border-color:#7d7979"><i class="ph-duotone ph-navigation-arrow" style="font-size:22px;color:#006786"></i>Directions</a>
+      </div>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!-- handoff -->
+  <sc-if value="{{ isHandoff }}" hint-placeholder-val="{{ false }}">
+  <div style="max-width:1100px;margin:0 auto;background:#f3f2f2;padding:48px clamp(20px,5vw,56px) 80px;color:#201e1d">
+    <h1 style="font-size:40px;margin:0 0 8px">Handoff notes</h1>
+    <p style="color:#444141;max-width:40em">Ganesh Dental Clinic, Adhikariguda. Built on the Broadsheet system: paper ground, Source Serif 4 throughout, cyan as the interactive colour. Magenta is reserved for draft and placeholder markers only, so unconfirmed content never looks like fact.</p>
+
+    <h2 style="margin-top:48px">1. Visual system</h2>
+    <h3 style="font-size:16px;color:#605d5d">Palette</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px">
+      <sc-for list="{{ palette }}" as="c" hint-placeholder-count="6">
+        <div><div style="height:64px;border-radius:2px;background:{{ c.hex }};box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)"></div><p style="margin:6px 0 0;font-weight:600;font-size:15px">{{ c.name }}</p><p style="margin:0;font-size:13px;color:#605d5d">{{ c.hex }} · {{ c.use }}</p></div>
+      </sc-for>
+    </div>
+    <p style="font-size:14px;color:#444141">Contrast note: the stock accent (#0088b0) is 3:1 and for icons or large type only. Text buttons and links use accent-700 (#006786) on paper, about 6:1.</p>
+
+    <h3 style="font-size:16px;color:#605d5d;margin-top:32px">Type scale — Source Serif 4</h3>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="6">
+        <div style="display:flex;gap:16px;align-items:baseline;flex-wrap:wrap"><span style="width:150px;font-size:13px;color:#605d5d;flex:none">{{ t.label }}</span><span style="font-size:{{ t.size }};font-weight:{{ t.weight }};line-height:1.15">{{ t.sample }}</span></div>
+      </sc-for>
+    </div>
+
+    <h3 style="font-size:16px;color:#605d5d;margin-top:32px">Spacing</h3>
+    <p style="font-size:15px">Base tokens 5 / 10 / 15 / 20 / 30 / 40 px. Section padding 56 px (mobile) / 88 px (desktop); page gutter 20 px / 5 vw up to 64 px; grid gaps 16–24 px. Radius 2–4 px (the system’s soft, small corners). No dividers between sections; whitespace carries structure.</p>
+
+    <h3 style="font-size:16px;color:#605d5d;margin-top:32px">Buttons, tags, card, form field</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a href="tel:+919938988986" class="btn btn-primary" style="background:#006786;min-height:48px;font-size:16px;padding:0 22px">Primary — call</a>
+      <a href="#top" class="btn btn-secondary" style="min-height:48px;font-size:16px;padding:0 22px;border-color:#7d7979">Secondary — directions</a>
+      <a href="#top" class="btn btn-ghost" style="min-height:48px;font-size:16px;color:#006786">Ghost link →</a>
+      <span class="tag tag-accent">Info tag</span>
+      <span class="tag tag-accent-2">Clinic to confirm</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px">
+      <article class="card" style="padding:20px;background:#eae9e9"><i class="ph-duotone ph-tooth" style="font-size:34px;color:#006786"></i><h3 style="font-size:20px;margin:0">Service card</h3><p style="margin:0;font-size:15px;color:#605d5d">Short description of this service goes here. Two lines of sample text.</p><span class="tag tag-accent-2" style="align-self:flex-start">Clinic to confirm</span></article>
+      <div class="field"><label for="x1" style="font-size:15px">Text field (48 px min height, visible label)</label><input id="x1" class="input" style="min-height:48px;font-size:17px" value="Default"><span style="font-size:13px;color:#605d5d">Helper text</span></div>
+      <div class="field"><label for="x2" style="font-size:15px">Error state</label><input id="x2" class="input" aria-invalid="true" style="min-height:48px;font-size:17px;border-color:#aa0b56" value=""><span style="font-size:13px;color:#790e3d">Enter a phone number so the clinic can call you back.</span></div>
+    </div>
+    <p style="font-size:14px;color:#444141">Focus: 2 px cyan outline, 2 px offset, on every interactive element. Hover and pressed steps come from the accent ramp (700 → 800).</p>
+
+    <h3 style="font-size:16px;color:#605d5d;margin-top:32px">Icons</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:32px;color:#006786">
+      <i class="ph-duotone ph-phone-call"></i><i class="ph-duotone ph-navigation-arrow"></i><i class="ph-duotone ph-map-pin"></i><i class="ph-duotone ph-clock"></i><i class="ph-duotone ph-tooth"></i><i class="ph-duotone ph-chat-circle-text"></i><i class="ph-duotone ph-caret-down"></i>
+    </div>
+    <p style="font-size:14px;color:#444141">Phosphor duotone only, cyan-700, 22–34 px. Always paired with a text label. Motifs: thin concentric arcs and a single curved line (abstract tooth contour), in accent-300 at 1.5 px. No tooth cartoons.</p>
+
+    <h3 style="font-size:16px;color:#605d5d;margin-top:32px">Component states</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <div style="background:#eae9e9;padding:16px;border-radius:2px"><strong>Map: loading</strong><p style="margin:6px 0 0;font-size:15px">Grey block with “Loading map…”; the directions link is already visible.</p></div>
+      <div style="background:#eae9e9;padding:16px;border-radius:2px"><strong>Map: error / blocked</strong><p style="margin:6px 0 0;font-size:15px">“Map couldn’t load.” Buttons for Open in Google Maps and Get directions.</p></div>
+      <div style="background:#eae9e9;padding:16px;border-radius:2px"><strong>Form: not connected</strong><p style="margin:6px 0 0;font-size:15px">Shown on submit today (try it in the site view). After integration: sending, success, send-failed with a call prompt.</p></div>
+    </div>
+
+    <h2 style="margin-top:56px">2. Section inventory and responsive behaviour</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:52em">
+      <sc-for list="{{ inventory }}" as="r" hint-placeholder-count="9">
+        <div style="display:grid;grid-template-columns:minmax(120px,160px) 1fr;gap:16px"><strong>{{ r.name }}</strong><span style="font-size:16px;color:#2d2b2b">{{ r.note }}</span></div>
+      </sc-for>
+    </div>
+
+    <h2 style="margin-top:56px">3. Content checklist</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px">
+      <div>
+        <h3 style="font-size:18px"><span class="tag tag-accent" style="font-size:13px">VERIFIED FACTS</span></h3>
+        <ul style="padding-left:20px;margin:0;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ verified }}" as="v" hint-placeholder-count="6"><li>{{ v }}</li></sc-for>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:18px"><span class="tag tag-accent-2" style="font-size:13px">PLACEHOLDERS TO CONFIRM</span></h3>
+        <ul style="padding-left:20px;margin:0;display:flex;flex-direction:column;gap:6px">
+          <sc-for list="{{ toConfirm }}" as="p" hint-placeholder-count="10"><li>{{ p }}</li></sc-for>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width:44em;margin-top:24px;font-size:15px;color:#444141"><strong>Deliberately omitted:</strong> the single Google review, its star score and its “40 years” remark; any superlatives (“best”, “painless”, “advanced”); prices, insurance, emergency coverage, outcomes. Odia is not generated; the selector slot is reserved.</p>
+
+    <h2 style="margin-top:56px">4. Assets required before launch</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:52em">
+      <sc-for list="{{ assets }}" as="a" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:16px"><strong>{{ a.name }}</strong><span style="font-size:16px;color:#2d2b2b">{{ a.note }}</span></div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { bgKey: 'paper', view: 'desktop', annotate: true, formError: false };
+  renderVals() {
+    const B = { paper: ['#f3f2f2','#eae9e9'], ivory: ['#faf6ec','#f1e9d8'], cyan: ['#e9f8ff','#cbeeff'], white: ['#ffffff','#f1efef'] }[this.state.bgKey];
+    const v = this.state.view, m = v === 'mobile';
+    const cls = (k) => 'btn ' + (v === k ? 'btn-primary' : 'btn-secondary');
+    return {
+      cDesktop: cls('desktop'), cMobile: cls('mobile'), cHandoff: cls('handoff'),
+      setDesktop: () => this.setState({ view: 'desktop' }),
+      setMobile: () => this.setState({ view: 'mobile' }),
+      setHandoff: () => this.setState({ view: 'handoff' }),
+      showSite: v !== 'handoff', isHandoff: v === 'handoff', isMobile: m, isDesktop: !m,
+      bg: B[0], surface: B[1], setBg: (e) => this.setState({ bgKey: e.target.value }),
+      annotate: this.state.annotate,
+      toggleAnnotate: (e) => this.setState({ annotate: e.target.checked }),
+      siteWidth: m ? '390px' : '1280px',
+      headerTop: '52px',
+      pad: m ? '20px' : 'clamp(24px,5vw,64px)',
+      secY: m ? '48px' : '88px',
+      heroGap: m ? '28px' : '56px',
+      h1: m ? '38px' : 'clamp(40px,4.6vw,60px)',
+      h2: m ? '30px' : '38px',
+      formError: this.state.formError ? 'true' : 'false',
+      errDisplay: this.state.formError ? 'block' : 'none',
+      serviceNames: ['Routine dental check-ups','Cleaning','Fillings','Tooth pain consultation','Root canal treatment','Extractions','Pediatric dental care','Dentures'],
+      submitForm: (e) => {
+        e.preventDefault();
+        const g = (id) => (document.getElementById(id)?.value || '').trim();
+        const name = g('f-name'), phone = g('f-phone');
+        if (!name || !phone) { this.setState({ formError: true }); return; }
+        this.setState({ formError: false });
+        const lines = ['New enquiry from the website', 'Name: ' + name, 'Phone: ' + phone];
+        if (g('f-service')) lines.push('Service: ' + g('f-service'));
+        if (g('f-time')) lines.push('Preferred call time: ' + g('f-time'));
+        if (g('f-msg')) lines.push('Message: ' + g('f-msg'));
+        window.open('https://wa.me/919938988986?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      },
+      services: [
+        ['ph-duotone ph-stethoscope', 'Routine dental check-ups', 'A full examination of teeth and gums, with advice on keeping them healthy.'],
+        ['ph-duotone ph-sparkle', 'Cleaning', 'Scaling and polishing to remove plaque and tartar build-up.'],
+        ['ph-duotone ph-tooth', 'Fillings', 'Tooth-coloured fillings to repair cavities and small chips.'],
+        ['ph-duotone ph-chat-circle-text', 'Tooth pain consultation', 'An examination to find the cause of pain and discuss treatment options.'],
+        ['ph-duotone ph-first-aid-kit', 'Root canal treatment', 'Treatment of an infected tooth to save it rather than remove it.'],
+        ['ph-duotone ph-minus-circle', 'Extractions', 'Removal of a damaged or problem tooth, including wisdom teeth.'],
+        ['ph-duotone ph-baby', 'Pediatric dental care', 'Gentle check-ups and care for children’s first and growing teeth.'],
+        ['ph-duotone ph-circles-three', 'Dentures', 'Full or partial dentures, fitted and adjusted for comfort.']
+      ].map(([icon, name, desc]) => ({ icon, name, desc })),
+      faqPlaceholders: ['Which treatments are offered?', 'What do treatments cost?', 'Is insurance accepted?', 'Is emergency care available?', 'Is a visit suitable for children or for me?'].map(q => q),
+      palette: [
+        { name: 'Paper', hex: '#f3f2f2', use: 'page ground' }, { name: 'Surface', hex: '#eae9e9', use: 'cards, fields' },
+        { name: 'Ink', hex: '#201e1d', use: 'text' }, { name: 'Cyan 700', hex: '#006786', use: 'buttons, links, icons' },
+        { name: 'Cyan 300', hex: '#99e0ff', use: 'line motifs' }, { name: 'Magenta 100/800', hex: '#fff1f4', use: 'draft + placeholder only' }
+      ],
+      typeScale: [
+        { label: 'H1 hero · 60/38', size: '40px', weight: 600, sample: 'Neighbourhood dental clinic' },
+        { label: 'H2 section · 38/30', size: '32px', weight: 600, sample: 'Visit the clinic' },
+        { label: 'H3 card · 20–22', size: '22px', weight: 600, sample: 'Enquiry form' },
+        { label: 'Lead · 19', size: '19px', weight: 400, sample: 'Open every day, 8:00 a.m. to 8:00 p.m.' },
+        { label: 'Body · 17', size: '17px', weight: 400, sample: 'Call to speak with the clinic, or get directions.' },
+        { label: 'Small / label · 13–15', size: '14px', weight: 400, sample: 'HOURS MAY VARY ON HOLIDAYS' }
+      ],
+      inventory: [
+        ['Header', 'Sticky. Wordmark left, anchors centre, Call clinic right. Mobile: anchors drop out, wordmark + Call remain; 48 px targets.'],
+        ['Hero', 'Two columns on desktop; stacked on mobile with the photo slot (4:5) after the CTAs. Call is primary, Directions secondary.'],
+        ['Info strip', 'Three columns → single stack. Each item has one action: directions, call to confirm, call.'],
+        ['Services', '4 → 2 → 1 card columns. Sample descriptions until the clinic supplies approved copy.'],
+        ['About / team', 'Empty states for introduction and dentist profile. Hidden publicly until approved.'],
+        ['Visit', 'Address and hours beside a map slot; stacks on mobile. Map embed on user consent, links always visible.'],
+        ['Contact', 'Phone first, then labelled form. Form is non-functional and says so until a workflow exists.'],
+        ['FAQ', 'Native disclosure widgets (keyboard accessible). Three logistics answers; treatment, cost, insurance and emergency questions are draft placeholders.'],
+        ['Footer', 'Four columns → stack. Privacy and accessibility links are placeholders. Mobile sticky Call + Directions bar sits at the bottom, 52 px high, over no content (page ends with footer padding).'],
+        ['Motion & a11y', 'Smooth anchor scroll only, disabled under reduced motion. One h1, h2 per section, h3 per card. Visible focus ring. All photos need alt text.']
+      ].map(([name, note]) => ({ name, note })),
+      verified: [
+        'Clinic: Ganesh Dental clinic, Adhikariguda main road', 'Phone: +91 99389 88986',
+        'Address: M579+X39, Adhikariguda, Pujaribharandi, Odisha 764073, India',
+        'Listed hours: daily, 8:00 a.m.–8:00 p.m.; may vary on holidays', 'Coordinates: 19.6649041, 82.167813',
+        'Google Maps listing: maps.app.goo.gl/oCztaM27uQnVfuzu7'
+      ],
+      toConfirm: [
+        'Dentist name, qualifications, registration, portrait', 'Clinic introduction text', 'Approved service list and descriptions',
+        'Clinic email', 'Appointment process and booking workflow', 'Form destination and consent wording',
+        'FAQ answers on treatments, cost, insurance, emergencies', 'Privacy policy and accessibility statement pages',
+        'Final wordmark or logo', 'Holiday hours policy', 'Odia copy (needs reviewed translation)'
+      ],
+      assets: [
+        { name: 'Logo / wordmark', note: 'Vector (SVG) logo, light and dark versions. Until supplied, the text wordmark with a tooth glyph stands in.' },
+        { name: 'Hero photo', note: 'Real photo of the clinic exterior or reception, min 1600 × 2000 px, with written permission and alt text.' },
+        { name: 'Dentist portrait', note: 'Square, min 800 px, consent given. Omit rather than substitute.' },
+        { name: 'Clinic interior (optional)', note: 'Only real photos of this clinic; no stock presented as the clinic.' },
+        { name: 'Copy', note: 'Introduction, dentist biography, approved services and descriptions, FAQ answers.' },
+        { name: 'Contact data', note: 'Email, booking process, confirmed holiday hours, form destination.' },
+        { name: 'Policies', note: 'Privacy policy and accessibility statement, reviewed by the clinic.' },
+        { name: 'Odia translations', note: 'Professionally reviewed text before enabling the language selector.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
