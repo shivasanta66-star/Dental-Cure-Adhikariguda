@@ -1,6 +1,6 @@
 # Dental Cure — website
 
-A static, single-page site built from `project/Ganesh Dental Home v2.dc.html`. It has no build step: upload the contents of this folder to any static host (Netlify, GitHub Pages, cPanel).
+A static, single-page site built from `project/Ganesh Dental Home v2.dc.html`. It has no build step. GitHub Pages serves this `docs/` folder from the `main` branch (Settings → Pages → Deploy from a branch → `main` / `/docs`). `.nojekyll` tells Pages to serve the files as they are.
 
 - `index.html`: the page content, plus SEO and `schema.org` Dentist data
 - `css/styles.css`: Broadsheet design tokens and the site layout (breakpoints at 1000px, 860px and 600px)
