@@ -1,4 +1,4 @@
-// Dental Cure — open/closed status (India time) and the WhatsApp enquiry form.
+// Ganesh Dental Clinic — open/closed status (India time) and the WhatsApp enquiry form.
 (function () {
   var PHONE = '919938988986';
   var OPEN_MIN = 8 * 60;   // 8 a.m.

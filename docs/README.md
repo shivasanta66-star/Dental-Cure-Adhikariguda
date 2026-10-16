@@ -1,11 +1,11 @@
-# Dental Cure — website
+# Ganesh Dental Clinic — website
 
 A static, single-page site built from `project/Ganesh Dental Home v2.dc.html`. It has no build step. GitHub Pages serves this `docs/` folder from the `main` branch (Settings → Pages → Deploy from a branch → `main` / `/docs`). `.nojekyll` tells Pages to serve the files as they are.
 
 - `index.html`: the page content, plus SEO and `schema.org` Dentist data
 - `css/styles.css`: Broadsheet design tokens and the site layout (breakpoints at 1000px, 860px and 600px)
 - `js/main.js`: the open/closed status in India time and the WhatsApp enquiry form
-- `favicon.svg`: the "D" roundel
+- `favicon.svg`: the "G" roundel
 
 Online booking goes to https://clinicdesk-app.netlify.app/book/ganesh-dental-home.
 
